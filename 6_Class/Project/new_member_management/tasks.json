@@ -1,0 +1,12 @@
+[
+    {
+        "index": 1,
+        "name": "python 공부하기",
+        "status": "미완료"
+    },
+    {
+        "index": 2,
+        "name": "python 심화 과정",
+        "status": "미완료"
+    }
+]
