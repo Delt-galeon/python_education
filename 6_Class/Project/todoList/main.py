@@ -1,8 +1,8 @@
 # main.py
-from add_task import AddTask
-from update_task import UpdateTask
-from delete_task import DeleteTask
-from view_task import ViewTasks
+from add_task import AddTask # C create
+from update_task import UpdateTask # U update
+from delete_task import DeleteTask # D delete
+from view_task import ViewTasks # R read
 
 
 def main_program():

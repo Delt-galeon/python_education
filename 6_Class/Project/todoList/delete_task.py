@@ -12,3 +12,5 @@ class DeleteTask:
                 print(f"할 일 '{self.task_index}'가 삭제되었습니다.")
                 return
         print(f"할 일 인덱스 '{self.task_index}'을 찾을 수 없습니다.")
+
+## delete (id, tasks) -> tasks

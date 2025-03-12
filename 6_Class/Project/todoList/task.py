@@ -1,4 +1,7 @@
 # task.py
+#[
+#{"index": 1, "name": "Python 공부", "status": "미완료"},
+#]
 
 class Task:
     def __init__(self, index, name, status="미완료"):
