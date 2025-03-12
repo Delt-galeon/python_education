@@ -14,10 +14,10 @@ class AddTask:
         task = Task(self.index_counter, self.task_name)
         self.tasks.append(task)
         self.index_counter += 1
-        self.save_to_json()
+        self.save_to_json() ## save_to_json() 추가
         print(f"할 일 '{self.task_name}'가 추가되었습니다.")
 
-    def save_to_json(self):
+    def save_to_json(self): ## save_to_json() 메소드 추가
         """할 일 목록을 JSON 파일에 저장"""
         with open("tasks.json", "w", encoding="utf-8") as f:
             json.dump(

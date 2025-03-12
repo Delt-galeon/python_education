@@ -6,18 +6,44 @@ from view_task import ViewTasks
 import json
 from task import Task
 
+'''[
+    {
+        "index": 1,
+        "name": "python 공부하기",
+        "status": "미완료"
+    },
+    {
+        "index": 2,
+        "name": "python 심화 과정",
+        "status": "미완료"
+    }
+]'''
 
 def load_from_json():
     """JSON 파일에서 할 일 목록 불러오기"""
     try:
         with open("tasks.json", "r", encoding="utf-8") as f:
             tasks_data = json.load(f)
-            tasks = [
-                Task(task["index"], task["name"], task["status"]) for task in tasks_data
-            ]
-            index_counter = tasks[-1].index + 1 if tasks else 1
+            '''tasks=[Task(1, "그림 그리기"), 
+            Task(2, "책 읽기"), 
+            Task(3, "코딩하기")]'''
+            # tasks = [
+            #     Task(task["index"], task["name"], task["status"]) for task in tasks_data
+            # ]
+            # index_counter = tasks[-1].index + 1 if tasks else 1
+            index_counter = 1
+            tasks=[]
+            for task in tasks_data:
+                tasks.append(Task(task["index"], task["name"], task["status"]))
+
+            if tasks:
+                index_counter = tasks[-1].index + 1
+            # else:
+            #     index_counter = 1
+            #index_counter = tasks[-1].index + 1 if tasks else 1
             return tasks, index_counter
-    except FileNotFoundError:
+    except Exception as error:
+        print(error, "/JSON 파일을 불러오는 중 오류가 발생했습니다.")
         return [], 1
 
 
